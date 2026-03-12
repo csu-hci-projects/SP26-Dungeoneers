@@ -5,10 +5,11 @@
 [Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
-[Uu]ser[Ss]ettings/
+[Uu]ser[Ss] ettings/
 
 # Visual Studio
 .vs/
+.vscode/
 .idea/
 *.csproj
 *.sln
