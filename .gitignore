@@ -7,14 +7,12 @@
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
 
-# Unity meta files (keep these!)
-# *.meta  <-- do NOT ignore these
-
-# Visual Studio / Rider
+# Visual Studio
 .vs/
 .idea/
 *.csproj
 *.sln
+*.slnx
 
 # OS
 .DS_Store
