@@ -13,7 +13,7 @@ public class ColorHoverBlueWhite : MonoBehaviour
         mat = GetComponentInChildren<MeshRenderer>().material;
         originalColor = mat.GetColor("_BaseColor");
 
-        var interactable = GetComponent<XRBaseInteractable>();
+        var interactable = GetComponent<XRSimpleInteractable>();
         interactable.hoverEntered.AddListener(OnHoverEntered);
         interactable.hoverExited.AddListener(OnHoverExited);
     }
