@@ -1,0 +1,21 @@
+Trial,Interaction,Distance,Diameter,Direction,Repetition,MT,Hit
+1,Controller Ray,0.3,0.05,Left,1,2.9791,1
+2,Controller Ray,0.3,0.1,Right,1,0.5178,0
+3,Controller Ray,0.6,0.05,Up,1,0.7503,1
+4,Controller Ray,0.6,0.1,Down,1,0.5914,1
+5,Pinch Ray,0.3,0.05,Left,1,5.8163,0
+6,Pinch Ray,0.3,0.1,Right,1,1.7665,1
+7,Pinch Ray,0.6,0.05,Up,1,1.3827,0
+8,Pinch Ray,0.6,0.1,Down,1,1.0248,0
+9,Pinch Ray,0.3,0.05,Left,2,2.8077,1
+10,Pinch Ray,0.3,0.1,Right,2,1.2994,1
+11,Pinch Ray,0.6,0.05,Up,2,1.2168,1
+12,Pinch Ray,0.6,0.1,Down,2,1.1419,0
+13,Controller Ray,0.3,0.05,Left,2,3.5769,1
+14,Controller Ray,0.3,0.1,Right,2,0.6503,1
+15,Controller Ray,0.6,0.05,Up,2,0.9417,1
+16,Controller Ray,0.6,0.1,Down,2,0.6086,1
+
+Total Trials,16
+Misses,5
+Error Rate %,31.25
