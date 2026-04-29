@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2558
     height: 1388
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 338}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 39
+  controlID: 103
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -1227,7 +1227,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Object Files
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1237,7 +1237,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Object Files
   m_LastFoldersGridSize: -1
   m_LastProjectPath: G:\CSU_Syncthing\cs465-3d-modaling\cs465Repo\SP26-Dungeoneers\Cybersickness
   m_LockTracker:
@@ -1246,12 +1246,12 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 3}
     m_SelectedIDs:
-    - m_Data: 77786
+    - m_Data: 77968
     m_LastClickedID:
-      m_Data: 77786
+      m_Data: 77968
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 77786
+    - m_Data: 96564
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1284,7 +1284,7 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 77786
+    - m_Data: 96564
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1311,10 +1311,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs:
-    - m_Data: 60458
-    m_LastClickedInstanceID: 60458
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: []
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs:
     - m_Data: 0
     m_RenameOverlay:
@@ -1442,7 +1441,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1330
+      - m_Data: -1508
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2063,9 +2062,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 12.220579, y: -7.9688296, z: 43.155075}
+    m_Target: {x: 1.7540029, y: -1.9638349, z: 65.44606}
     speed: 2
-    m_Value: {x: 12.220579, y: -7.9688296, z: 43.155075}
+    m_Value: {x: 12.489018, y: -7.6541734, z: 43.154167}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2111,13 +2110,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.08965705, y: 0.108836524, z: -0.009814827, w: 0.9900098}
+    m_Target: {x: 0.1377324, y: 0.046037395, z: -0.0063810595, w: 0.98944265}
     speed: 2
     m_Value: {x: -0.08965705, y: -0.108836524, z: 0.009814827, w: -0.9900098}
   m_Size:
-    m_Target: 28.0392
+    m_Target: 0.08871113
     speed: 2
-    m_Value: 28.0392
+    m_Value: 27.812773
   m_Ortho:
     m_Target: 0
     speed: 2
