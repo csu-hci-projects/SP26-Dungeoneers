@@ -11,6 +11,14 @@ public class LockCylinder : MonoBehaviour
     private float totalRotation = 0f;
     private float lastControllerRotation;
     private float lastObjectRotation;
+    private TrialManager trialManager;
+    private bool isActiveTrial = false;
+
+    public void SetTrialManager(TrialManager tm)
+    {
+        trialManager = tm;
+        isActiveTrial = true;
+    }
 
     void Start()
     {
@@ -29,6 +37,8 @@ public class LockCylinder : MonoBehaviour
 
     private void OnResponse(WitResponseNode response)
     {
+        if (!isActiveTrial) return;
+
         string text = response["text"].Value.ToLower().Trim();
         Debug.Log("Heard: " + text);
 
@@ -38,7 +48,10 @@ public class LockCylinder : MonoBehaviour
             totalRotation = 0f;
             hasReached180 = false;
             lastObjectRotation = transform.eulerAngles.z;
-            lastControllerRotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch).eulerAngles.z;
+            lastControllerRotation = OVRInput.GetLocalControllerRotation(
+                OVRInput.Controller.RTouch).eulerAngles.z;
+            Debug.Log("trialManager is: " + (trialManager == null ? "NULL" : "SET"));
+            trialManager?.OnUnlock();
             Debug.Log("Unlocked!");
         }
 
@@ -46,15 +59,13 @@ public class LockCylinder : MonoBehaviour
         {
             isUnlocked = false;
             Debug.Log("Locked!");
+            trialManager?.OnLockAttempt(hasReached180);
 
             if (hasReached180)
             {
-                Debug.Log("180 reached and locked-----disappearing");
-                Destroy(transform.parent.gameObject);
-            }
-            else
-            {
-                Debug.Log("Locked but 180 not reached yet-------staying");
+                isActiveTrial = false;
+                Debug.Log("180 reached and locked — disappearing!");
+                transform.parent.gameObject.SetActive(false);
             }
         }
     }
@@ -65,8 +76,8 @@ public class LockCylinder : MonoBehaviour
 
         if (OVRInput.Get(OVRInput.RawButton.RHandTrigger))
         {
-            // Spin object using controller
-            Quaternion controllerRot = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch);
+            Quaternion controllerRot = OVRInput.GetLocalControllerRotation(
+                OVRInput.Controller.RTouch);
             float controllerZ = controllerRot.eulerAngles.z;
             float controllerDelta = Mathf.DeltaAngle(lastControllerRotation, controllerZ) * 0.5f;
             transform.Rotate(0f, 0f, controllerDelta);
@@ -81,13 +92,15 @@ public class LockCylinder : MonoBehaviour
         }
         else
         {
-            lastControllerRotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTouch).eulerAngles.z;
+            lastControllerRotation = OVRInput.GetLocalControllerRotation(
+                OVRInput.Controller.RTouch).eulerAngles.z;
             lastObjectRotation = transform.eulerAngles.z;
         }
 
-        if (Mathf.Abs(totalRotation) >= 180f)
+        if (Mathf.Abs(totalRotation) >= 180f && !hasReached180)
         {
             hasReached180 = true;
+            trialManager?.On180Reached();
         }
     }
 
