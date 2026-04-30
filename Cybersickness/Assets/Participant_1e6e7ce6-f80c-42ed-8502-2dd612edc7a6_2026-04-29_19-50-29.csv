@@ -1,0 +1,4 @@
+ParticipantID,Trial,TrialStartTime,TimeToUnlock,TimeTo180,TimeToLock,TotalTrialTime,UnlockAttempts,LockAttempts,Success
+1e6e7ce6-f80c-42ed-8502-2dd612edc7a6,1,8.09,15.31,21.85,24.70,24.70,1,1,true
+1e6e7ce6-f80c-42ed-8502-2dd612edc7a6,2,40.81,8.25,14.02,17.03,17.03,1,1,true
+1e6e7ce6-f80c-42ed-8502-2dd612edc7a6,3,65.87,7.88,12.55,18.26,18.26,1,1,true

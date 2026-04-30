@@ -6728,8 +6728,8 @@ MonoBehaviour:
   trialWall3: {fileID: 1455947586}
   tunnel2Renderer: {fileID: 1243337094}
   tunnel3Renderer: {fileID: 1095488617}
-  colorChangingShader2: {fileID: 2100000, guid: 4569433d4ac817943a6848d3646a5190, type: 2}
-  colorChangingShader3: {fileID: 2100000, guid: 4569433d4ac817943a6848d3646a5190, type: 2}
+  colorChangingShader2: {fileID: 2100000, guid: 9159d875b7c18984daea5d20686bd9f4, type: 2}
+  colorChangingShader3: {fileID: 2100000, guid: ee98e4f91ef0036488ad244b6f3cb508, type: 2}
   instructionText: {fileID: 2025523023}
   trialNumberText: {fileID: 476038377}
   statusText: {fileID: 1409569452}
