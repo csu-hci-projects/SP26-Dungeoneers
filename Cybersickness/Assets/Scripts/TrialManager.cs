@@ -20,6 +20,12 @@ public class TrialManager : MonoBehaviour
     public Material colorChangingShader2;
     public Material colorChangingShader3;
 
+
+    [Header("Centerpiece Renderers")]
+    public Renderer centerpiece1Renderer;
+    public Renderer centerpiece2Renderer;
+    public Renderer centerpiece3Renderer;
+
     [Header("HUD Text")]
     public TextMeshPro instructionText;
     public TextMeshPro trialNumberText;
@@ -39,6 +45,8 @@ public class TrialManager : MonoBehaviour
     private float lockTime = -1f;
     private int unlockCount = 0;
     private int lockAttempts = 0;
+    private bool waitingForY = false;
+    private bool trialStarted = false;
 
     void Start()
     {
@@ -49,60 +57,76 @@ public class TrialManager : MonoBehaviour
         trialWall2.SetActive(true);
         trialWall3.SetActive(true);
 
-        instructionText.text = "<color=white><b>Study starting soon...</b></color>";
+        instructionText.text = "<color=white><b>Press B to begin study</b></color>";
         trialNumberText.text = "<color=white><b>Sensory Overload Study</b></color>";
         statusText.text = "";
         completionText.text = "";
 
         csvRows.Add("ParticipantID,Trial,TrialStartTime,TimeToUnlock,TimeTo180,TimeToLock,TotalTrialTime,UnlockAttempts,LockAttempts,Success");
 
-        StartCoroutine(CountdownToStart());
+        waitingForY = true;
     }
 
-    IEnumerator CountdownToStart()
+    void Update()
     {
-        int countdown = 5;
-        while (countdown > 0)
+        if (waitingForY && OVRInput.GetDown(OVRInput.Button.Two))
         {
-            instructionText.text = "<color=white><b>Study begins in: " + countdown + "</b></color>";
-            yield return new WaitForSeconds(1f);
-            countdown--;
+            waitingForY = false;
+            StartCoroutine(HandleBPress());
         }
-        StartStudy();
     }
 
-    public void StartStudy()
+    
+
+    IEnumerator HandleBPress()
     {
-        studyStartTime = Time.time;
-        startWall.SetActive(false);
-        tunnel1Renderer.material = colorChangingShader1;
-        instructionText.text = "<color=white><b>Walk forward to begin</b></color>";
-        StartTrial(0);
+        if (currentTrial == 0 && !trialStarted)
+        {
+            studyStartTime = Time.time;
+            startWall.SetActive(false);
+            tunnel1Renderer.material = colorChangingShader1;
+            centerpiece1Renderer.material = colorChangingShader1;
+            instructionText.text = "<color=white><b>Walk forward to begin</b></color>";
+            yield return new WaitForSeconds(2f);
+            StartTrial(0);
+        }
+        else
+        {
+            if (currentTrial == 1)
+            {
+                trialWall2.SetActive(false);
+                tunnel2Renderer.material = colorChangingShader2;
+                centerpiece2Renderer.material = colorChangingShader2;
+            }
+            else if (currentTrial == 2)
+            {
+                trialWall3.SetActive(false);
+                tunnel3Renderer.material = colorChangingShader3;
+                centerpiece3Renderer.material = colorChangingShader3;
+            }
+            instructionText.text = "<color=white><b>Walk forward to begin</b></color>";
+            yield return new WaitForSeconds(2f);
+            StartTrial(currentTrial);
+        }
     }
 
     public void StartTrial(int trialIndex)
     {
         currentTrial = trialIndex;
+        trialStartTime = Time.time;
         unlockTime = -1f;
         reachedTime = -1f;
         lockTime = -1f;
         unlockCount = 0;
         lockAttempts = 0;
+        trialStarted = true;
 
         cylinders[currentTrial].SetTrialManager(this);
-        StartCoroutine(StartTrialDelayed());
-    }
-
-    IEnumerator StartTrialDelayed()
-    {
-        yield return new WaitForSeconds(3f);
-
-        // Start timing only here
-        trialStartTime = Time.time;
 
         trialNumberText.text = "<color=white><b>Trial: " + (currentTrial + 1) + " / " + cylinders.Length + "</b></color>";
-        instructionText.text = "<color=#00FFFF><b>When close to dial Say 'Unlock' to begin interaction</b></color>";
+        instructionText.text = "<color=#00FFFF><b>Say 'Unlock' to begin interaction</b></color>";
         statusText.text = "";
+
         Debug.Log("Trial " + (currentTrial + 1) + " started");
     }
 
@@ -148,8 +172,10 @@ public class TrialManager : MonoBehaviour
 
             if (currentTrial + 1 < cylinders.Length)
             {
-                instructionText.text = "<color=white><b>Walk forward to next trial</b></color>";
-                StartCoroutine(BetweenTrials(currentTrial + 1));
+                currentTrial++;
+                trialStarted = false;
+                instructionText.text = "<color=white><b>Remove headset & Wait for instructions to start next trial</b></color>";
+                waitingForY = true;
             }
             else
                 EndStudy();
@@ -157,33 +183,7 @@ public class TrialManager : MonoBehaviour
         else
         {
             statusText.text = "<color=red><b>Not quite! Keep spinning...</b></color>";
-            Debug.Log("Lock attempted but 180 not reached yet");
         }
-    }
-
-    IEnumerator BetweenTrials(int nextTrial)
-    {
-        int countdown = 5;
-        while (countdown > 0)
-        {
-            instructionText.text = "<color=white><b>Next trial in: " + countdown + "</b></color>";
-            yield return new WaitForSeconds(1f);
-            countdown--;
-        }
-
-        if (nextTrial == 1)
-        {
-            trialWall2.SetActive(false);
-            tunnel2Renderer.material = colorChangingShader2;
-        }
-        else if (nextTrial == 2)
-        {
-            trialWall3.SetActive(false);
-            tunnel3Renderer.material = colorChangingShader3;
-        }
-
-        instructionText.text = "<color=white><b>Walk forward to begin</b></color>";
-        StartTrial(nextTrial);
     }
 
     void EndStudy()
@@ -198,7 +198,9 @@ public class TrialManager : MonoBehaviour
     void SaveCSV()
     {
         string fileName = "Participant_" + participantID + "_" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".csv";
-        string path = Path.Combine(Application.dataPath, fileName);
+        string path = Path.Combine(
+            System.Environment.GetFolderPath(
+                System.Environment.SpecialFolder.Desktop), fileName);
         File.WriteAllLines(path, csvRows);
         Debug.Log("CSV saved to: " + path);
     }

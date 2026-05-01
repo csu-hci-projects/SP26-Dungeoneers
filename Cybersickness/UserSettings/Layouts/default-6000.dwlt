@@ -69,8 +69,8 @@ MonoBehaviour:
     y: 0
     width: 339
     height: 1332
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 2014
     height: 715
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 20}
@@ -2539,8 +2539,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "UnityEditor.MainToolbarWindow\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 51
+    x: 0
+    y: 0
     width: 2558
     height: 36
   m_SerializedDataModeController:
@@ -2833,8 +2833,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 802
+    x: 0
+    y: 739
     width: 2218
     height: 591
   m_SerializedDataModeController:
@@ -2885,9 +2885,7 @@ MonoBehaviour:
       m_Data: 77888
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 77888
-    - m_Data: 1000000000
-    - m_Data: 2147483647
+    - m_Data: 78054
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2920,7 +2918,7 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 77888
+    - m_Data: 78054
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3003,7 +3001,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 2220
-    y: 87
+    y: 24
     width: 338
     height: 1306
   m_SerializedDataModeController:
@@ -3053,8 +3051,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 87
+    x: 0
+    y: 24
     width: 204
     height: 689
   m_SerializedDataModeController:
@@ -3760,7 +3758,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.25017884, y: 0.19588237, z: -0.051726323, w: 0.94686157}
     speed: 2
-    m_Value: {x: 0.25015613, y: 0.19586457, z: -0.051721625, w: 0.94677556}
+    m_Value: {x: -0.25017884, y: -0.19588237, z: 0.051726323, w: -0.9468616}
   m_Size:
     m_Target: 54.98893
     speed: 2
@@ -3858,7 +3856,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 206
-    y: 87
+    y: 24
     width: 2012
     height: 689
   m_SerializedDataModeController:
