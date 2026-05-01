@@ -6730,6 +6730,9 @@ MonoBehaviour:
   tunnel3Renderer: {fileID: 1095488617}
   colorChangingShader2: {fileID: 2100000, guid: 9159d875b7c18984daea5d20686bd9f4, type: 2}
   colorChangingShader3: {fileID: 2100000, guid: ee98e4f91ef0036488ad244b6f3cb508, type: 2}
+  centerpiece1Renderer: {fileID: 1147406520}
+  centerpiece2Renderer: {fileID: 2078913331}
+  centerpiece3Renderer: {fileID: 1986167176}
   instructionText: {fileID: 2025523023}
   trialNumberText: {fileID: 476038377}
   statusText: {fileID: 1409569452}
@@ -11855,7 +11858,7 @@ GameObject:
   - component: {fileID: 1986167176}
   - component: {fileID: 1986167175}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12212,7 +12215,7 @@ GameObject:
   - component: {fileID: 2078913331}
   - component: {fileID: 2078913330}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
