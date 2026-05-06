@@ -13,6 +13,7 @@ public class TrialManager : MonoBehaviour
     public Material colorChangingShader1;
 
     [Header("Between Trial Walls")]
+    public GameObject controlToTrial1Wall;
     public GameObject trialWall2;
     public GameObject trialWall3;
     public Renderer tunnel2Renderer;
@@ -22,6 +23,7 @@ public class TrialManager : MonoBehaviour
 
 
     [Header("Centerpiece Renderers")]
+    public Renderer controlCenterpieceRenderer;
     public Renderer centerpiece1Renderer;
     public Renderer centerpiece2Renderer;
     public Renderer centerpiece3Renderer;
@@ -54,6 +56,7 @@ public class TrialManager : MonoBehaviour
         Debug.Log("Participant ID: " + participantID);
 
         startWall.SetActive(true);
+        controlToTrial1Wall.SetActive(true);
         trialWall2.SetActive(true);
         trialWall3.SetActive(true);
 
@@ -82,10 +85,9 @@ public class TrialManager : MonoBehaviour
     {
         if (currentTrial == 0 && !trialStarted)
         {
+            //Control trial no material swap
             studyStartTime = Time.time;
             startWall.SetActive(false);
-            tunnel1Renderer.material = colorChangingShader1;
-            centerpiece1Renderer.material = colorChangingShader1;
             instructionText.text = "<color=white><b>Walk forward to begin</b></color>";
             yield return new WaitForSeconds(2f);
             StartTrial(0);
@@ -94,11 +96,18 @@ public class TrialManager : MonoBehaviour
         {
             if (currentTrial == 1)
             {
+                // After control — first real trial
+                controlToTrial1Wall.SetActive(false);
+                tunnel1Renderer.material = colorChangingShader1;
+                centerpiece1Renderer.material = colorChangingShader1;
+            }
+            else if (currentTrial == 2)
+            {
                 trialWall2.SetActive(false);
                 tunnel2Renderer.material = colorChangingShader2;
                 centerpiece2Renderer.material = colorChangingShader2;
             }
-            else if (currentTrial == 2)
+            else if (currentTrial == 3)
             {
                 trialWall3.SetActive(false);
                 tunnel3Renderer.material = colorChangingShader3;
@@ -159,7 +168,7 @@ public class TrialManager : MonoBehaviour
 
             csvRows.Add(
                 participantID + "," +
-                (currentTrial + 1) + "," +
+                (currentTrial == 0 ? "Control" : "Trial " + currentTrial) + "," +
                 trialStartTime.ToString("F2") + "," +
                 unlockTime.ToString("F2") + "," +
                 reachedTime.ToString("F2") + "," +
