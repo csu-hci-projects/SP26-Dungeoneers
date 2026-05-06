@@ -8661,20 +8661,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de9ae1c858deeb49a30dfffc4c34c95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrialManager
+  participantNumber: 0
   startWall: {fileID: 1516683824}
   tunnel1Renderer: {fileID: 1243337094}
-  colorChangingShader1: {fileID: 2100000, guid: 4569433d4ac817943a6848d3646a5190, type: 2}
+  tunnel2Renderer: {fileID: 1095488617}
+  tunnel3Renderer: {fileID: 2108556419}
   controlToTrial1Wall: {fileID: 1970947571}
   trialWall2: {fileID: 1455947586}
   trialWall3: {fileID: 495034769}
-  tunnel2Renderer: {fileID: 1095488617}
-  tunnel3Renderer: {fileID: 2108556419}
-  colorChangingShader2: {fileID: 2100000, guid: 9159d875b7c18984daea5d20686bd9f4, type: 2}
-  colorChangingShader3: {fileID: 2100000, guid: ee98e4f91ef0036488ad244b6f3cb508, type: 2}
   controlCenterpieceRenderer: {fileID: 1147406520}
   centerpiece1Renderer: {fileID: 2078913331}
   centerpiece2Renderer: {fileID: 1986167176}
   centerpiece3Renderer: {fileID: 182629903}
+  colorChangingShader1: {fileID: 2100000, guid: 4569433d4ac817943a6848d3646a5190, type: 2}
+  colorChangingShader2: {fileID: 2100000, guid: 9159d875b7c18984daea5d20686bd9f4, type: 2}
+  colorChangingShader3: {fileID: 2100000, guid: ee98e4f91ef0036488ad244b6f3cb508, type: 2}
   instructionText: {fileID: 2025523023}
   trialNumberText: {fileID: 476038377}
   statusText: {fileID: 1409569452}
