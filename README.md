@@ -1,54 +1,213 @@
-# SP26-Dungeoneers (Dungeoneers VR Study)
+# Dungeoneers: Investigating Cybersickness Acclimatization in Virtual Reality
 
-This repository contains Unity projects for the Dungeoneers VR cybersickness/acclimatization study.
+Dungeoneers is a Unity-based virtual reality research platform developed to investigate whether controlled exposure to visually intense environments can accelerate acclimatization to cybersickness.
 
-## Repository layout
+Built for the Meta Quest 2, the system guides participants through a series of tunnel environments with progressively different levels of visual intensity. After each trial, participants complete questionnaires based on the Virtual Reality Sickness Questionnaire (VRSQ) and provide open-ended reflections that are analyzed using reflexive thematic analysis.
 
-- `Cybersickness/` — primary project for the Dungeoneers environment.
-- `hw1/` — earlier prototype/homework project assets and scripts.
+This project was developed as the final project for **CS 465: Multimodal Interaction for 3D Interfaces** at **Colorado State University (Spring 2026)**.
 
-## Reproducibility baseline
+---
+
+## Research Question
+
+**Does prior exposure to a high-intensity virtual reality environment accelerate acclimatization to lower-intensity VR environments?**
+
+---
+
+## Key Findings
+
+* The **purple/yellow** condition consistently produced the strongest reports of vertigo, eye strain, and disorientation.
+* The **blue/pink** condition was generally perceived as the most comfortable and easiest to navigate.
+* Several participants reported becoming more comfortable over the course of the study, suggesting short-term acclimatization.
+* Participants with prior VR experience tended to report fewer symptoms than first-time users.
+* Some participants experienced lingering symptoms, such as stomach discomfort, after removing the headset.
+
+---
+
+## Repository Structure
+
+* `Cybersickness/` — Main Unity project used in the final experiment.
+* `hw1/` — Earlier prototype and homework assets.
+* `docs/` — Figures, screenshots, final paper, and presentation materials.
+* `Latex Source/` — ACM LaTeX source files for the final report.
+* `PDFs-LiteratureSurvey/` — Research papers used in the literature review.
+* `Videos/` — Links to all project videos.
+* `REPRODUCIBILITY.md` — Detailed instructions for rebuilding and running the project.
+
+---
+
+## Technology Stack
+
+* Unity 6 (`6000.3.10f1`)
+* Meta Quest 2
+* Meta XR SDK (`85.0.0`)
+* Meta Voice SDK / Wit.ai
+* Universal Render Pipeline (URP)
+* C#
+* ACM LaTeX (`acmart` template)
+
+---
+
+## Reproducibility Baseline
 
 Use the exact versions below when possible:
 
-- Unity Editor version: `6000.3.10f1`
-	- Source: [Cybersickness/ProjectSettings/ProjectVersion.txt](Cybersickness/ProjectSettings/ProjectVersion.txt)
-- Unity package set / dependencies:
-	- Source: [Cybersickness/Packages/manifest.json](Cybersickness/Packages/manifest.json)
+* Unity Editor version: `6000.3.10f1`
 
-Key XR packages currently configured in the project include:
+	* Source: `Cybersickness/ProjectSettings/ProjectVersion.txt`
+* Unity package dependencies:
 
-- `com.meta.xr.sdk.all` `85.0.0`
-- `com.unity.xr.openxr` `1.16.1`
-- `com.unity.inputsystem` `1.18.0`
-- `com.unity.render-pipelines.universal` `17.3.0`
+	* Source: `Cybersickness/Packages/manifest.json`
 
-## Bootstrap / first-time setup
+Key packages include:
+
+* `com.meta.xr.sdk.all` `85.0.0`
+* `com.unity.xr.openxr` `1.16.1`
+* `com.unity.inputsystem` `1.18.0`
+* `com.unity.render-pipelines.universal` `17.3.0`
+
+---
+
+## Bootstrap / First-Time Setup
 
 1. Install Unity Hub.
 2. Install Unity Editor `6000.3.10f1`.
-3. In Unity Hub, open the `Cybersickness` folder as a Unity project.
-4. Allow package restore/import to complete.
-5. Confirm no package errors in Console.
+3. Open the `Cybersickness/` folder in Unity Hub.
+4. Allow all packages to restore.
+5. Confirm that there are no package or compilation errors.
 
-## Meta Quest setup (Quest 2)
+---
 
-1. Put headset in Developer Mode.
-2. Connect headset via USB-C and allow debugging prompt in-headset.
-3. In Unity, switch platform to Android.
-4. Ensure OpenXR + Meta XR packages remain enabled (from `manifest.json`).
-5. Build and run to device.
+## Meta Quest 2 Setup
 
-## Running in Editor
+1. Enable Developer Mode on the headset.
+2. Connect the headset to your computer using a USB-C cable.
+3. Approve the USB debugging prompt inside the headset.
+4. In Unity, switch the build platform to Android.
+5. Ensure OpenXR and Meta XR packages are enabled.
+6. Build and run to the headset.
 
-1. Open scene assets under `Cybersickness/Assets` (for example `scene1.unity`).
-2. Press Play.
-3. Verify XR rig and interactions initialize without missing script warnings.
+---
 
-## Data/output note
+## Running the Experiment
 
-Some experiment scripts write CSV output under `Assets/` (for example `Dungeoneers_Outputfile.csv` in the hw1 project). For reproducible runs, document participant/session metadata with each exported CSV.
+1. Open the main scene (for example `scene1.unity`) in `Cybersickness/Assets/`.
+2. Set the participant number in the Unity Inspector.
+3. Press Play in the Unity Editor or deploy to the Quest 2.
+4. Complete all four tunnel trials.
+5. Review the generated CSV files and questionnaire responses.
 
-## Additional reproducibility checklist
+---
 
-See [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
+## Experimental Conditions
+
+1. **Control** — Static gray-to-white gradient.
+2. **Low Intensity** — Blue and pink moving zebra pattern.
+3. **Medium Intensity** — Black and white moving zebra pattern.
+4. **High Intensity** — Purple and yellow moving zebra pattern.
+
+---
+
+## Data Collection
+
+### Software Logging
+
+The system records:
+
+* Participant UUID
+* Trial label
+* Time to first `unlock` command
+* Time to reach 180° of dial rotation
+* Time to successful `lock` command
+* Total trial duration
+* Number of `unlock` attempts
+* Number of `lock` attempts
+
+### Surveys and Interviews
+
+After each condition, participants complete:
+
+* Virtual Reality Sickness Questionnaire (VRSQ)
+* Open-ended qualitative prompts
+
+After all conditions, participants complete:
+
+* A semi-structured interview focused on discomfort, adaptation, and comparative impressions
+
+---
+
+## Final Report
+
+* `docs/Dungeoneers_Final_Report.pdf`
+
+---
+
+## Videos
+
+See the `Videos/` directory for:
+
+* Short Project Overview Video (3–5 minutes)
+* Final Presentation Video (approximately 12 minutes)
+* Programming Walkthrough Video
+
+---
+
+## GitHub Repository
+
+[SP26-Dungeoneers Repository](https://github.com/csu-hci-projects/SP26-Dungeoneers?utm_source=chatgpt.com)
+
+---
+
+## Team Contributions
+
+### Angel Gonzalez Portillo
+
+* Unity development and core C# implementation
+* XR integration using the Meta XR SDK
+* Voice recognition integration with Wit.ai
+* Scene construction and shader implementation
+* Experimental testing and debugging
+* Proctored and documented **Trials 5 and 6**
+
+### Joshua Masih
+
+* Research design and study framing
+* Literature review and state-of-the-art analysis
+* ACM paper development and LaTeX formatting
+* Thematic analysis and interpretation of qualitative findings
+* Participant demographics and methodological documentation
+* GitHub organization, README development, and submission packaging
+* Presentation slide development
+* Proctored and documented **Trials 3 and 4**
+
+### John Robert Harrison Matthews
+
+* Prototype concept and visual design direction
+* Early prototype development and task design
+* Experimental testing and usability feedback
+* Presentation support and project planning
+* Proctored and documented **Trials 1 and 2**
+
+### Shared Contributions
+
+All team members contributed to:
+
+* Study design refinement
+* Participant recruitment and scheduling
+* System testing and troubleshooting
+* Presentation preparation
+* Final review of the report and submission materials
+
+---
+
+## Course Information
+
+**CS 465 – Multimodal Interaction for 3D Interfaces**
+Colorado State University
+Spring 2026
+
+---
+
+## Additional Reproducibility Information
+
+For detailed instructions on rebuilding and running the project, see `REPRODUCIBILITY.md`.
