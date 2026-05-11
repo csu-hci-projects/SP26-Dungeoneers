@@ -4,7 +4,15 @@
 [Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
-[Uu]ser[Ss] ettings/
+[Uu]ser[Ss]ettings/
+*.apk
+*.aab
+
+# Build output and backup
+Dungeoneers_BackUpThisFolder_ButDontShipItWithYourGame/
+Cybersickness_BurstDebugInformation_DoNotShip/
+.utmp/
+*.cpgz
 
 # Visual Studio
 .vs/
