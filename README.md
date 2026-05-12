@@ -2,7 +2,7 @@
 
 Dungeoneers is a Unity-based virtual reality research platform developed to investigate whether controlled exposure to visually intense environments can accelerate acclimatization to cybersickness.
 
-Built for the Meta Quest 2, the system guides participants through a series of tunnel environments with progressively different levels of visual intensity. After each trial, participants complete questionnaires based on the Virtual Reality Sickness Questionnaire (VRSQ) and provide open-ended reflections that are analyzed using reflexive thematic analysis.
+Built for the Meta Quest 2, the system is able to guide participants through a series of tunnel environments with progressively different levels of visual intensity. Before beginning the experimental trials, participants completed a pre-study survey designed to assess their prior virtual reality experience and baseline susceptibility to motion sickness. After each trial, participants complete questionnaires based on the Virtual Reality Sickness Questionnaire (VRSQ) and provide open-ended reflections that are analyzed using reflexive thematic analysis.
 
 This project was developed as the final project for **CS 465: Multimodal Interaction for 3D Interfaces** at **Colorado State University (Spring 2026)**.
 
@@ -130,6 +130,8 @@ After each condition, participants complete:
 * Virtual Reality Sickness Questionnaire (VRSQ)
 * Open-ended qualitative prompts
 
+The VRSQ was developed by Kim et al.
+
 After all conditions, participants complete:
 
 * A semi-structured interview focused on discomfort, adaptation, and comparative impressions
@@ -144,11 +146,17 @@ After all conditions, participants complete:
 
 ## Videos
 
-See the `Videos/` directory for:
+### 1. Short Overview Video (3–5 minutes)
+- View: https://youtu.be/your_overview_video
+- Download: https://drive.google.com/file/d/your_overview_file/view?usp=sharing
 
-* Short Project Overview Video (3–5 minutes)
-* Final Presentation Video (approximately 12 minutes)
-* Programming Walkthrough Video
+### 2. Presentation Video (10–12 minutes)
+- View: https://www.youtube.com/watch?v=XCb253zrlcI
+- Download: https://drive.google.com/file/d/your_presentation_file/view?usp=sharing
+
+### 3. Programming Video
+- View: https://youtu.be/your_programming_video
+- Download: https://drive.google.com/file/d/your_programming_file/view?usp=sharing
 
 ---
 
@@ -172,9 +180,7 @@ See the `Videos/` directory for:
 ### Joshua Masih
 
 * Research design and study framing
-* Literature review and state-of-the-art analysis
 * ACM paper development and LaTeX formatting
-* Thematic analysis and interpretation of qualitative findings
 * Participant demographics and methodological documentation
 * GitHub organization, README development, and submission packaging
 * Presentation slide development
@@ -184,6 +190,7 @@ See the `Videos/` directory for:
 
 * Prototype concept and visual design direction
 * Early prototype development and task design
+* Thematic analysis and interpretation of qualitative findings
 * Experimental testing and usability feedback
 * Presentation support and project planning
 * Proctored and documented **Trials 1 and 2**
