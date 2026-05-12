@@ -155,8 +155,8 @@ After all conditions, participants complete:
 - Download: https://drive.google.com/file/d/your_presentation_file/view?usp=sharing
 
 ### 3. Programming Video
-- View: https://youtu.be/your_programming_video
-- Download: https://drive.google.com/file/d/your_programming_file/view?usp=sharing
+- View:  https://youtu.be/hzZ44u0Qabo
+- Download: https://colostate-my.sharepoint.com/:v:/g/personal/c837205363_colostate_edu/IQAwGDrBKL4oToU4wZXfqcRIASu7No8zx-YPQKJ4aGp28jY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=xBLInJ
 
 ---
 
