@@ -152,7 +152,7 @@ After all conditions, participants complete:
 
 ### 2. Presentation Video (10–12 minutes)
 - View: https://www.youtube.com/watch?v=XCb253zrlcI
-- Download: (https://drive.google.com/file/d/1E7lhSDX3MDurDScQVuajEH0anOTTs2y5/view?usp=drive_link)
+- Download: https://drive.google.com/file/d/1E7lhSDX3MDurDScQVuajEH0anOTTs2y5/view?usp=drive_link)
 
 ### 3. Programming Video
 - View:  https://youtu.be/hzZ44u0Qabo
