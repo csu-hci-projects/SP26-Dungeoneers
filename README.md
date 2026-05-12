@@ -147,7 +147,7 @@ After all conditions, participants complete:
 ## Videos
 
 ### 1. Short Overview Video (3–5 minutes)
-- View: https://youtu.be/your_overview_video
+- View: https://www.youtube.com/watch?v=uIwQT-Cz3M8
 - Download: https://drive.google.com/file/d/your_overview_file/view?usp=sharing
 
 ### 2. Presentation Video (10–12 minutes)
